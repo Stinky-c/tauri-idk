@@ -1,0 +1,9 @@
+[tools]
+rust = "latest"
+pnpm = "latest"
+node = "latest"
+
+[tasks]
+
+dev = "pnpm tauri dev"
+tauri = "pnpm tauri"
