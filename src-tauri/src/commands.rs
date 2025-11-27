@@ -1,5 +1,4 @@
 use crate::prelude::*;
-use tauri_plugin_sql::DbInstances;
 
 #[tauri::command]
 pub async fn greet(name: String, state: AppStateType<'_>) -> Result<String, String> {
