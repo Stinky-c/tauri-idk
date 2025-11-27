@@ -9,6 +9,6 @@
     "core:default",
     "opener:default",
     "log:default",
-    "sql:default"
+    "store:default"
   ]
 }

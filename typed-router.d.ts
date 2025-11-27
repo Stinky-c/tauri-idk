@@ -37,11 +37,18 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/editor': RouteRecordInfo<
-      '/editor',
+    '/editor/': RouteRecordInfo<
+      '/editor/',
       '/editor',
       Record<never, never>,
       Record<never, never>,
+      | never
+    >,
+    '/editor/[id]': RouteRecordInfo<
+      '/editor/[id]',
+      '/editor/:id',
+      { id: ParamValue<true> },
+      { id: ParamValue<false> },
       | never
     >,
     '/test': RouteRecordInfo<
@@ -76,9 +83,15 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'src/pages/editor.vue': {
+    'src/pages/editor/index.vue': {
       routes:
-        | '/editor'
+        | '/editor/'
+      views:
+        | never
+    }
+    'src/pages/editor/[id].vue': {
+      routes:
+        | '/editor/[id]'
       views:
         | never
     }

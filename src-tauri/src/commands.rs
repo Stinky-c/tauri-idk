@@ -1,3 +1,5 @@
+use tauri_plugin_store::StoreExt;
+
 use crate::prelude::*;
 
 #[tauri::command]
@@ -11,10 +13,9 @@ pub async fn greet(name: String, state: AppStateType<'_>) -> Result<String, Stri
 }
 
 #[tauri::command]
-async fn command_name<R: Runtime>(
-    _app: AppHandle<R>,
-    _window: Window<R>,
-    _state: AppStateType<'_>,
-) -> Result<(), String> {
+pub async fn get_store_meta<R: Runtime>(state: AppHandle<R>) -> Result<(), String> {
+    let store = state.get_store("store.json").unwrap();
+
+    if store.has("meta") {}
     Ok(())
 }
